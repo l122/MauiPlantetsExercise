@@ -9,30 +9,37 @@
 
         <!--  Planet Images  -->
         <Image
+            x:Name="imgEarth"
             HeightRequest="90"
             HorizontalOptions="Center"
+            Opacity="0"
             Source="earth"
             TranslationX="-50"
             TranslationY="50"
             VerticalOptions="Start" />
 
         <Image
+            x:Name="imgMars"
             HeightRequest="150"
             HorizontalOptions="Center"
+            Opacity="0"
             Source="mars"
             TranslationX="-200"
             TranslationY="130"
             VerticalOptions="Start" />
 
         <Image
+            x:Name="imgVenus"
             HeightRequest="100"
             HorizontalOptions="Center"
+            Opacity="0"
             Source="venus"
             TranslationX="80"
             TranslationY="250"
             VerticalOptions="Start" />
 
         <Image
+            x:Name="imgJupiter"
             HeightRequest="250"
             HorizontalOptions="Center"
             Source="jupiter"
@@ -41,32 +48,40 @@
             VerticalOptions="Start" />
 
         <Image
+            x:Name="imgMercury"
             HeightRequest="30"
             HorizontalOptions="Center"
+            Opacity="0"
             Source="mercury"
             TranslationX="0"
             TranslationY="150"
             VerticalOptions="Start" />
 
         <Image
+            x:Name="imgNeptune"
             HeightRequest="250"
             HorizontalOptions="Center"
+            Opacity="0"
             Source="neptune"
             TranslationX="200"
             TranslationY="-80"
             VerticalOptions="Start" />
 
         <Image
+            x:Name="imgSaturn"
             HeightRequest="110"
             HorizontalOptions="Center"
+            Opacity="0"
             Source="saturn"
             TranslationX="180"
             TranslationY="350"
             VerticalOptions="Start" />
 
         <Image
+            x:Name="imgUranus"
             HeightRequest="100"
             HorizontalOptions="Center"
+            Opacity="0"
             Source="uranus"
             TranslationX="-180"
             TranslationY="-20"
@@ -79,6 +94,7 @@
             Padding="24,32"
             BackgroundColor="{StaticResource FrameBackgroundColor}"
             HorizontalOptions="Fill"
+            Opacity="0"
             Stroke="{StaticResource BorderColor}"
             VerticalOptions="End">
             <Border.StrokeShape>
