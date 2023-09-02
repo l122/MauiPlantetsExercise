@@ -34,6 +34,18 @@ public partial class StartPage : ContentPage
 
         // Commit the animation
         parentAnimation.Commit(this, "TransitionAnimation", 16, 3000, null, null);
+
+        // 10 minute animation
+        uint duration = 10 * 60 * 100000;
+        await Task.WhenAll
+        (
+          imgVenus.RotateTo(-251 * 360, duration),
+          imgEarth.RotateTo(199 * 360, duration),
+          imgMars.RotateTo(-199 * 360, duration),
+          imgJupiter.RotateTo(199 * 360, duration),
+          imgNeptune.RotateTo(-199 * 360, duration),
+          imgMercury.RotateTo(199 * 360, duration)
+        );
     }
 
     async void ExploreNow_Clicked(System.Object sender, System.EventArgs e)
