@@ -37,19 +37,22 @@ public partial class StartPage : ContentPage
 
         // 10 minute animation
         uint duration = 10 * 60 * 100000;
-        await Task.WhenAll
-        (
-          imgVenus.RotateTo(-251 * 360, duration),
-          imgEarth.RotateTo(199 * 360, duration),
-          imgMars.RotateTo(-199 * 360, duration),
-          imgJupiter.RotateTo(199 * 360, duration),
-          imgNeptune.RotateTo(-199 * 360, duration),
-          imgMercury.RotateTo(199 * 360, duration)
-        );
+        parentAnimation = new Animation
+        {
+            { 0, 1, new Animation(a => this.imgVenus.Rotation = a, 0, -199 * 360) },
+            { 0, 1, new Animation(a => this.imgEarth.Rotation = a, 0, 199 * 360) },
+            { 0, 1, new Animation(a => this.imgMars.Rotation = a, 0, -199 * 360) },
+            { 0, 1, new Animation(a => this.imgJupiter.Rotation = a, 0, -199 * 360) },
+            { 0, 1, new Animation(a => this.imgNeptune.Rotation = a, 0, 199 * 360) },
+            { 0, 1, new Animation(a => this.imgMercury.Rotation = a, 0, -199 * 360) }
+        };
+
+        parentAnimation.Commit(this, "ContinuousAnimation", 16, duration, null, null, null);
     }
 
     async void ExploreNow_Clicked(System.Object sender, System.EventArgs e)
     {
+        this.AbortAnimation("ContinuousAnimation");
         //Application.Current.MainPage = new NavigationPage(new PlanetsPage());
     }
 }
